@@ -18,17 +18,40 @@
 
 <style>
 
-/* conteneur principal */
+/* CONTENEUR GLOBAL VIDEO + HOTSPOTS */
+
+.scene{
+position:relative;
+width:100vw;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* VIDEO */
+
+.scene video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+/* CONTENEUR DES ZONES CLIQUABLES */
 
 .grille-cercles{
 position:absolute;
-top:13%;
+top:-8%;
 left:0;
 width:100%;
-height:100vh;
+height:100%;
+z-index:2;
 }
 
-/* zones cliquables */
+/* ZONES CLIQUABLES */
 
 #Photo-liberes,
 #Photo-episodes,
@@ -40,7 +63,7 @@ width:16.8%;
 height:58.6%;
 }
 
-/* contenu interne */
+/* CONTENU INTERNE */
 
 .grid-item-cercles{
 width:100%;
@@ -50,7 +73,7 @@ justify-content:center;
 align-items:flex-end;
 }
 
-/* titres */
+/* TITRES */
 
 .locker-title{
 color:yellow;
@@ -121,21 +144,20 @@ top:20%;
 
 </div>
 </div>
+
 </nav>
 
 </header>
 
 <section>
 
-<div id="Video-fond">
+<div class="scene">
 
 <video autoplay muted playsinline>
 
 <source type="video/mp4" src="assets/img/Casier-saut.mp4">
 
 </video>
-
-</div>
 
 <article>
 
@@ -175,10 +197,11 @@ top:20%;
 
 </article>
 
+</div>
+
 </section>
 
 <footer class="footer footer-minimal">
-...
 </footer>
 
 <script src="assets/libs/jquery/jquery.min.js"></script>
